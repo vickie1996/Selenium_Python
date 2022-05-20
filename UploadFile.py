@@ -30,40 +30,46 @@ driver.find_element(By.XPATH, "//input[@value='Selenium Webdriver']").click()
 print("Automation tools Entered")
 
 time.sleep(10)
-#Continent
+########################Continent###################
 dropdown = driver.find_element(By.XPATH,"//select[@name='continents']")
 dropdown.find_element(By.XPATH,"//option[. = 'Asia']").click()
 print("Continent Entered")
-#Selenium Commands
+
+#######################Selenium Commands###########################
 dropdown = driver.find_element(By.XPATH,"//select[@id='selenium_commands']")
 dropdown.find_element(By.XPATH,"//option[.='WebElement Commands']").click()
 print("Selenium command Entered")
-#Scrolling
+
+########################Scrolling######################################
 element = driver.find_element(By.XPATH, "//input[@name='photo']")
 actions = ActionChains(driver);
 actions.move_to_element(element);
 
-#Image Upload
+#############################Image Upload##########################
 imageUpload = driver.find_element(By.XPATH, "//input[@name='photo']")
 imageUpload.send_keys("/home/c-vivekb/Downloads/AppleTV-logo.png")  #give any path of image in local system
 print("Image Uploaded")
 
-#Download
-print("Main window")
-driver.find_element(By.LINK_TEXT, "Click here to Download File").click()
-print("File Downloaded")
-print("AD window")
-time.sleep(5)
+########################################################################################################################################################
+##############################   USE THIS CODE TO HANDLE AD IF IS STATIC#########################################################
+#Download is opening a link and in that link Ad coming is Dynamic by which its getting hard to get the locators for the same because everytime it changing
+# print("Main window")
+# driver.find_element(By.LINK_TEXT, "Click here to Download File").click()
+# print("File Downloaded")
+# print("AD window")
+# time.sleep(5)
 
-#Iframe Ad closing
-iFrame = driver.find_element(By.ID, "google_ads_iframe_/1254144,22662382379/techlistic_com-pixel1_0")
-driver.switch_to.frame(iFrame)
-driver.find_element(By.XPATH, "//div[@id='dismiss-button']").click()
-print("Github window")
+####################### #Iframe Ad closing#####################
+# iFrame = driver.find_element(By.ID, "google_ads_iframe_/1254144,22662382379/techlistic_com-pixel1_0")
+# driver.switch_to.frame(iFrame)
+# driver.find_element(By.XPATH, "//div[@id='dismiss-button']").click()
+# print("Github window")
+#############################################################################################################################################################
+
 time.sleep(5)
 driver.back()
 
-#Submit
+###############Submit##################
 driver.find_element(By.ID, "submit").click()
 print("Submit")
 driver.close()
